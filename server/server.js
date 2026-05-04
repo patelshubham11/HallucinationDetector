@@ -23,6 +23,11 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/chat', chatRoutes);
 
+// Root Route for testing
+app.get('/', (req, res) => {
+  res.send('API is running successfully!');
+});
+
 // Database Connection
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/hallucination_detector';
